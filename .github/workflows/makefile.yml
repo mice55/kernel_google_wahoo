@@ -12,19 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: "set up environment for build"
-      run:
-        sudo apt-get install -y git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip bc
-        mkdir customkernel&&cd customkernel
+    - run: sudo apt-get install -y git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip bc
+    - run: mkdir customkernelcd customkernel
     - name: "clone src"
-      run:
-        git clone https://github.com/bravesoul349/kernel_google_wahoo.git
-        mv kernel_google_wahoo src
+    - run: git clone https://github.com/bravesoul349/kernel_google_wahoo.git
+    - run: mv kernel_google_wahoo src
     - name: "clone tc&tc32"
-      run:
-        git clone https://github.com/mvaisakh/gcc-arm.git
-        mv gcc-arm tc32
-        git clone https://github.com/mvaisakh/gcc-arm64.git
-        mv gcc-arm64 tc
+    - run: git clone https://github.com/mvaisakh/gcc-arm.git
+    - run: mv gcc-arm tc32
+    - run: git clone https://github.com/mvaisakh/gcc-arm64.git
+    - run: mv gcc-arm64 tc
     - name: test
-      run:
-        ls -a
+    - run: ls -a
