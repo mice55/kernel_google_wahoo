@@ -1,0 +1,16 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  Build-android-kernel:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: helloworld
+      run:
+        echo "hello,world"
