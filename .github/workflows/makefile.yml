@@ -19,5 +19,4 @@ jobs:
       - run: mv gcc-arm tc32
       - run: git clone https://github.com/mvaisakh/gcc-arm64.git
       - run: mv gcc-arm64 tc
-      - name: test
       - run: ls -a
