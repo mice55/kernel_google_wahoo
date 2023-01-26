@@ -5,14 +5,13 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-    
-defaults:
-  run:
-    shell: bash
-    working-directory: /home/runner/
 
 jobs:
   Build-android-kernel:
+    defaults:
+      run:
+        shell: bash
+        working-directory: /home/runner/
     name: build
     runs-on: ubuntu-latest
     steps:
